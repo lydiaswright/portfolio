@@ -156,7 +156,35 @@ class PortfolioApp {
             if (img.complete && img.naturalWidth === 0) {
                 mark(img);
             }
-            img.addEventListener('error', () => mark(img));
+
+            img.addEventListener('error', function handleImgError() {
+                // Try a few fallback paths before marking as empty.
+                const original = img.getAttribute('src') || '';
+                const repoPrefix = '/lydiaswright.github.io';
+                const candidates = [];
+
+                if (original.startsWith('/')) {
+                    candidates.push(original.replace(/^\//, ''));
+                    candidates.push(repoPrefix + original);
+                } else {
+                    candidates.push('/' + original);
+                    candidates.push('./' + original);
+                    candidates.push(repoPrefix + '/' + original);
+                }
+
+                let i = 0;
+                const tryNext = () => {
+                    if (i >= candidates.length) {
+                        mark(img);
+                        return;
+                    }
+                    img.removeEventListener('error', handleImgError);
+                    img.addEventListener('error', tryNext, { once: true });
+                    img.src = candidates[i++];
+                };
+
+                tryNext();
+            });
         });
     }
 
