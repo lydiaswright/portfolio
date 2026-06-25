@@ -89,6 +89,58 @@ class PortfolioApp {
 
             observer.observe(reelSection);
         }
+
+        // Capture a freeze-frame at ~0.5s and use it as the poster
+        try {
+            this.capturePosterAt(video, 0.5);
+        } catch (e) {
+            // non-fatal
+        }
+    }
+
+    capturePosterAt(video, time = 0.5) {
+        if (!video) return;
+
+        const doCapture = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const width = video.videoWidth || 1280;
+            const height = video.videoHeight || 720;
+            canvas.width = width;
+            canvas.height = height;
+
+            const restoreTime = video.currentTime || 0;
+
+            const onSeeked = () => {
+                try {
+                    ctx.drawImage(video, 0, 0, width, height);
+                    const dataUrl = canvas.toDataURL('image/jpeg');
+                    video.setAttribute('poster', dataUrl);
+                } catch (err) {
+                    // ignore capture errors
+                } finally {
+                    video.removeEventListener('seeked', onSeeked);
+                    try { video.currentTime = restoreTime; } catch (e) {}
+                }
+            };
+
+            video.addEventListener('seeked', onSeeked);
+            const prevMuted = video.muted;
+            video.muted = true;
+            try { video.pause(); } catch (e) {}
+            // clamp time to duration if available
+            const target = (video.duration && time > video.duration) ? Math.max(0, video.duration - 0.1) : time;
+            try { video.currentTime = target; } catch (e) {
+                // some browsers may throw on setting currentTime; ignore
+            }
+            video.muted = prevMuted;
+        };
+
+        if (video.readyState >= 2 || video.duration) {
+            doCapture();
+        } else {
+            video.addEventListener('loadedmetadata', doCapture, { once: true });
+        }
     }
 
     setupImageFallbacks() {
