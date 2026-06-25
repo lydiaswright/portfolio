@@ -30,10 +30,13 @@ class PortfolioApp {
     }
 
     filterProductions(filter) {
+        let visible = 0;
         this.productionCards.forEach(card => {
             const category = card.getAttribute('data-category');
+            const show = filter === 'all' || category === filter;
 
-            if (filter === 'all' || category === filter) {
+            if (show) {
+                visible++;
                 card.classList.remove('hidden');
                 // Re-trigger animation
                 card.classList.remove('animated');
@@ -44,6 +47,10 @@ class PortfolioApp {
                 card.classList.add('hidden');
             }
         });
+
+        // Show an empty-state message when a filter has no credits (e.g. Screen)
+        const empty = document.querySelector('.filmography__empty');
+        if (empty) empty.hidden = visible !== 0;
     }
 
     updateActiveFilter(activeButton) {

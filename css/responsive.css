@@ -6,30 +6,75 @@
         display: flex;
     }
 
+    /* Drop backdrop-filter on mobile: it would make .nav the containing block
+       for the fixed full-screen menu, collapsing it to the bar height. */
+    .nav {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(6, 6, 16, 0.92);
+    }
+
     .nav__list {
         position: fixed;
-        top: 0;
+        top: var(--nav-height);
         right: 0;
         bottom: 0;
+        left: 0;
         width: 100%;
-        max-width: 300px;
-        background: rgba(43, 43, 43, 0.98);
-        backdrop-filter: blur(20px);
+        background: rgba(6, 6, 16, 0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(212, 104, 58, 0.18);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: var(--space-xl);
-        transform: translateX(100%);
-        transition: transform var(--transition-slow);
+        gap: clamp(1.25rem, 5vh, 2.5rem);
         padding: var(--space-2xl);
+        overflow-y: auto;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-slow) var(--ease-out),
+                    opacity var(--transition-base),
+                    visibility 0s linear var(--transition-slow);
     }
 
     .nav__list.active {
         transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        transition: transform var(--transition-slow) var(--ease-out),
+                    opacity var(--transition-base);
     }
 
+    /* Staggered entrance for menu items */
+    .nav__item {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    .nav__list.active .nav__item {
+        animation: fadeInUp 0.5s var(--ease-out) forwards;
+    }
+    .nav__list.active .nav__item:nth-child(1) { animation-delay: 0.10s; }
+    .nav__list.active .nav__item:nth-child(2) { animation-delay: 0.16s; }
+    .nav__list.active .nav__item:nth-child(3) { animation-delay: 0.22s; }
+    .nav__list.active .nav__item:nth-child(4) { animation-delay: 0.28s; }
+    .nav__list.active .nav__item:nth-child(5) { animation-delay: 0.34s; }
+    .nav__list.active .nav__item:nth-child(6) { animation-delay: 0.40s; }
+    .nav__list.active .nav__item:nth-child(7) { animation-delay: 0.46s; }
+
     .nav__link {
-        font-size: var(--text-lg);
+        font-family: var(--font-display);
+        font-size: var(--text-3xl);
+        font-weight: var(--weight-normal);
+        text-transform: none;
+        letter-spacing: 0;
+        color: var(--color-text-light);
+    }
+
+    .nav__link:hover,
+    .nav__link.active {
+        color: var(--color-accent);
     }
 
     .nav__link::after {

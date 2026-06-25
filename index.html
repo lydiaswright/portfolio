@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lydia Wright - Actor, Storyteller, Artist. Professional portfolio showcasing film, television, and theatre work.">
-    <title>Lydia Wright - Actor</title>
+    <meta name="description" content="Lydia Wright — London-based actor, playing age 16–20. LAMDA-trained. Stage and screen work, showreel, gallery and casting profile.">
+    <title>Lydia Wright — Actor</title>
+    <meta name="theme-color" content="#060610">
+    <link rel="canonical" href="https://lydiaswright.github.io/">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lydia Wright — Actor">
+    <meta property="og:description" content="London-based actor, playing age 16–20. Stage & screen, showreel, gallery and casting profile.">
+    <meta property="og:image" content="https://lydiaswright.github.io/images/og-image.jpg">
+    <meta property="og:url" content="https://lydiaswright.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lydia Wright — Actor">
+    <meta name="twitter:description" content="London-based actor, playing age 16–20. Stage & screen, showreel, gallery and casting profile.">
+    <meta name="twitter:image" content="https://lydiaswright.github.io/images/og-image.jpg">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
@@ -34,7 +48,7 @@
                 <li class="nav__item"><a href="#hero" class="nav__link" data-section="hero">Home</a></li>
                 <li class="nav__item"><a href="#about" class="nav__link" data-section="about">About</a></li>
                 <li class="nav__item"><a href="#reel" class="nav__link" data-section="reel">Reel</a></li>
-                <li class="nav__item"><a href="#filmography" class="nav__link" data-section="filmography">Work</a></li>
+                <li class="nav__item"><a href="#filmography" class="nav__link" data-section="filmography">Credits</a></li>
                 <li class="nav__item"><a href="#gallery" class="nav__link" data-section="gallery">Gallery</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
             </ul>
@@ -51,7 +65,6 @@
             <div class="hero__content">
                 <p class="hero__eyebrow">Actor · London</p>
                 <h1 class="hero__title" data-split-text>Lydia Wright</h1>
-                <p class="hero__tagline">Actor • Storyteller • Artist</p>
             </div>
             <div class="hero__scroll">
                 <span class="hero__scroll-text">Scroll</span>
@@ -64,29 +77,17 @@
             <div class="container">
                 <div class="about__grid">
                     <div class="about__image-wrapper" data-scroll-animate>
-                        <img src="images/about/portrait.jpg" alt="Lydia Wright portrait" class="about__image" loading="lazy">
+                        <img src="images/about/portrait.jpg" alt="Lydia Wright" class="about__image" width="1280" height="960" loading="lazy" decoding="async">
                     </div>
                     <div class="about__content" data-scroll-animate>
                         <h2 class="section-title">About</h2>
                         <div class="about__text">
-                            <p>Lydia Wright is a versatile actor with a passion for bringing complex characters to life across film, television, and theatre.</p>
-                            <p>Trained at the Royal Academy of Dramatic Art (RADA), Lydia has developed a unique ability to inhabit diverse roles, from classical theatre to contemporary screen work. Her performances are characterized by emotional depth, authenticity, and a commitment to storytelling that resonates with audiences.</p>
-                            <p>With experience spanning multiple genres and mediums, Lydia continues to challenge herself with roles that push artistic boundaries and explore the human condition.</p>
+                            <p>Lydia Wright is a young London-based actor, working across stage and screen with a focus on truthful, authentic performances.</p>
+                            <p>She trained in LAMDA Acting with Worlds End Productions before completing a Level&nbsp;3 Extended Diploma in Performing Arts Practice at Bodens College of Creative Arts in London.</p>
+                            <p>Her stage work spans ensemble and named roles, drawing on a range of skills &mdash; from stage combat, physical theatre and Meisner technique to voice acting and improvisation.</p>
+                            <p>Alongside performing, Lydia has experience teaching drama to younger children, improving confidence, imagination and creativity through acting.</p>
                         </div>
-                        <div class="about__stats">
-                            <div class="stat">
-                                <span class="stat__number">15+</span>
-                                <span class="stat__label">Productions</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat__number">RADA</span>
-                                <span class="stat__label">Training</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat__number">3</span>
-                                <span class="stat__label">Awards</span>
-                            </div>
-                        </div>
+                        <a href="docs/Acting%20CV.pdf" class="btn about__cv" target="_blank" rel="noopener">Download Acting CV</a>
                     </div>
                 </div>
             </div>
@@ -98,12 +99,12 @@
                 <h2 class="section-title section-title--centered" data-scroll-animate>Showreel</h2>
                 <div class="reel__wrapper" data-scroll-animate>
                     <div class="reel__video-container">
-                        <video class="reel__video" id="reelVideo" poster="images/reel-poster.jpg" controls>
-                            <source src="videos/showreel.mp4" type="video/mp4">
+                        <video class="reel__video" id="reelVideo" controls preload="metadata" playsinline poster="images/reel-poster.jpg">
+                            <source src="videos/Showreel.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="reel__description">A showcase of recent performances across film, television, and theatre.</p>
+                    <p class="reel__description">Extended Showreel</p>
                 </div>
             </div>
         </section>
@@ -111,42 +112,26 @@
         <!-- Filmography Section -->
         <section class="filmography" id="filmography">
             <div class="container">
-                <h2 class="section-title section-title--centered" data-scroll-animate>Filmography</h2>
+                <h2 class="section-title section-title--centered" data-scroll-animate>Credits</h2>
 
                 <div class="filmography__filters" data-scroll-animate>
                     <button class="filter-btn filter-btn--active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="film">Film</button>
-                    <button class="filter-btn" data-filter="tv">Television</button>
                     <button class="filter-btn" data-filter="theatre">Theatre</button>
+                    <button class="filter-btn" data-filter="screen">Screen</button>
                 </div>
 
                 <div class="filmography__grid">
-                    <!-- Film -->
-                    <article class="production-card" data-category="film" data-scroll-animate>
+                    <!-- Theatre -->
+                    <article class="production-card" data-category="theatre" data-scroll-animate>
                         <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="The Last Echo" class="production-card__image" loading="lazy">
+                            <img src="images/filmography/tuesday.jpg" alt="Tuesday — Bodens College" class="production-card__image" width="981" height="1146" loading="lazy" decoding="async">
                         </div>
                         <div class="production-card__content">
-                            <h3 class="production-card__title">The Last Echo</h3>
-                            <p class="production-card__role">Lead Role - Sarah Mitchell</p>
+                            <h3 class="production-card__title">Tuesday</h3>
+                            <p class="production-card__role">Alex &middot; dir. Adam Boden</p>
                             <div class="production-card__meta">
-                                <span class="production-card__type">Film</span>
-                                <span class="production-card__year">2025</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- TV -->
-                    <article class="production-card" data-category="tv" data-scroll-animate>
-                        <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="Crown Court" class="production-card__image" loading="lazy">
-                        </div>
-                        <div class="production-card__content">
-                            <h3 class="production-card__title">Crown Court</h3>
-                            <p class="production-card__role">Recurring - Detective Hayes</p>
-                            <div class="production-card__meta">
-                                <span class="production-card__type">Television</span>
-                                <span class="production-card__year">2024</span>
+                                <span class="production-card__type">Theatre</span>
+                                <span class="production-card__year">Bodens College</span>
                             </div>
                         </div>
                     </article>
@@ -154,63 +139,19 @@
                     <!-- Theatre -->
                     <article class="production-card" data-category="theatre" data-scroll-animate>
                         <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="Hamlet" class="production-card__image" loading="lazy">
+                            <img src="images/filmography/animal-farm.jpg" alt="Animal Farm — Bodens College" class="production-card__image" width="799" height="1126" loading="lazy" decoding="async">
                         </div>
                         <div class="production-card__content">
-                            <h3 class="production-card__title">Hamlet</h3>
-                            <p class="production-card__role">Ophelia - National Theatre</p>
+                            <h3 class="production-card__title">Animal Farm</h3>
+                            <p class="production-card__role">Bell &middot; dir. Adam Boden</p>
                             <div class="production-card__meta">
                                 <span class="production-card__type">Theatre</span>
-                                <span class="production-card__year">2024</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Film -->
-                    <article class="production-card" data-category="film" data-scroll-animate>
-                        <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="Midnight Sky" class="production-card__image" loading="lazy">
-                        </div>
-                        <div class="production-card__content">
-                            <h3 class="production-card__title">Midnight Sky</h3>
-                            <p class="production-card__role">Supporting - Dr. Elena Ross</p>
-                            <div class="production-card__meta">
-                                <span class="production-card__type">Film</span>
-                                <span class="production-card__year">2023</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- TV -->
-                    <article class="production-card" data-category="tv" data-scroll-animate>
-                        <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="The Wire Season 6" class="production-card__image" loading="lazy">
-                        </div>
-                        <div class="production-card__content">
-                            <h3 class="production-card__title">The Wire Season 6</h3>
-                            <p class="production-card__role">Guest Star - Maya Chen</p>
-                            <div class="production-card__meta">
-                                <span class="production-card__type">Television</span>
-                                <span class="production-card__year">2023</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Theatre -->
-                    <article class="production-card" data-category="theatre" data-scroll-animate>
-                        <div class="production-card__image-wrapper">
-                            <img src="images/filmography/placeholder.jpg" alt="A Streetcar Named Desire" class="production-card__image" loading="lazy">
-                        </div>
-                        <div class="production-card__content">
-                            <h3 class="production-card__title">A Streetcar Named Desire</h3>
-                            <p class="production-card__role">Blanche DuBois - West End</p>
-                            <div class="production-card__meta">
-                                <span class="production-card__type">Theatre</span>
-                                <span class="production-card__year">2022</span>
+                                <span class="production-card__year">Forty Hall Barn</span>
                             </div>
                         </div>
                     </article>
                 </div>
+                <p class="filmography__empty" hidden>No screen credits available yet.</p>
             </div>
         </section>
 
@@ -221,22 +162,28 @@
                 <div class="gallery__scroll-container" data-scroll-animate>
                     <div class="gallery__track">
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-1.jpg" alt="Production still 1" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/01.jpg" alt="Lydia Wright on stage" class="gallery__image" width="1280" height="892" loading="lazy" decoding="async">
                         </div>
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-2.jpg" alt="Production still 2" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/02.jpg" alt="Lydia Wright portrait" class="gallery__image" width="1280" height="956" loading="lazy" decoding="async">
                         </div>
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-3.jpg" alt="Production still 3" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/03.jpg" alt="Lydia Wright in performance" class="gallery__image" width="1107" height="1322" loading="lazy" decoding="async">
                         </div>
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-4.jpg" alt="Production still 4" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/04.jpg" alt="Lydia Wright in an ensemble scene" class="gallery__image" width="1280" height="980" loading="lazy" decoding="async">
                         </div>
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-5.jpg" alt="Production still 5" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/05.jpg" alt="Lydia Wright in a film scene" class="gallery__image" width="1280" height="1154" loading="lazy" decoding="async">
                         </div>
                         <div class="gallery__item">
-                            <img src="images/gallery/placeholder-6.jpg" alt="Production still 6" class="gallery__image" loading="lazy">
+                            <img src="images/gallery/06.jpg" alt="Lydia Wright performing" class="gallery__image" width="1280" height="1294" loading="lazy" decoding="async">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="images/gallery/07.jpg" alt="Lydia Wright in Tuesday" class="gallery__image" width="1280" height="944" loading="lazy" decoding="async">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="images/gallery/08.jpg" alt="Lydia Wright in Animal Farm" class="gallery__image" width="1280" height="974" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -249,19 +196,25 @@
                 <h2 class="section-title section-title--centered" data-scroll-animate>Get In Touch</h2>
                 <div class="contact__content" data-scroll-animate>
                     <div class="contact__info">
-                        <h3 class="contact__subtitle">Representation</h3>
-                        <p class="contact__text">
-                            <strong>Agent:</strong> Creative Artists Agency<br>
-                            <strong>Email:</strong> <a href="mailto:representation@example.com">representation@example.com</a>
-                        </p>
+                        <h3 class="contact__subtitle">Contact</h3>
+                        <p class="contact__text">For casting enquiries and bookings, please get in touch.</p>
+                        <ul class="social-links">
+                            <li><a href="mailto:Lydia.s.wright23@gmail.com" class="social-link"><span>Lydia.s.wright23@gmail.com</span></a></li>
+                            <li><a href="tel:+447521656868" class="social-link"><span>+44 7521 656868</span></a></li>
+                            <li><a href="https://lydiaswright.github.io" target="_blank" rel="noopener" class="social-link"><span>lydiaswright.github.io</span></a></li>
+                        </ul>
                     </div>
                     <div class="contact__social">
-                        <h3 class="contact__subtitle">Connect</h3>
-                        <ul class="social-links">
-                            <li><a href="https://www.spotlight.com" target="_blank" rel="noopener" class="social-link">Spotlight</a></li>
-                            <li><a href="https://www.imdb.com" target="_blank" rel="noopener" class="social-link">IMDb</a></li>
-                            <li><a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-link">Instagram</a></li>
+                        <h3 class="contact__subtitle">Casting Profile</h3>
+                        <ul class="contact__details">
+                            <li><span>Playing Age</span><span>16&ndash;20</span></li>
+                            <li><span>Height</span><span>5&prime;9&Prime; / 176cm</span></li>
+                            <li><span>Eye Colour</span><span>Green</span></li>
+                            <li><span>Hair Colour</span><span>Dark Brown</span></li>
+                            <li><span>Location</span><span>London</span></li>
+                            <li><span>Nationality</span><span>White British</span></li>
                         </ul>
+                        <p class="contact__note">Valid UK Passport &middot; Enhanced DBS</p>
                     </div>
                 </div>
             </div>
